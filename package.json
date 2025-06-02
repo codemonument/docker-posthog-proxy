@@ -2,6 +2,13 @@
   "name": "docker-posthog-proxy",
   "type": "module",
   "private": true,
+  "scripts": {
+    "deploy": "fly launch",
+    "_once_allocate_v4": "fly ips allocate-v4",
+    "__management__": "inspect remote deployment for this service",
+    "printenv": "fly ssh console -C \"printenv\"",
+    "status": "fly status"
+  },
   "devDependencies": {
     "@types/bun": "latest"
   },
